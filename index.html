@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Translator | BF</title>
+    <link rel="icon" type="image/png" href="imgs/color-translator-logos-assets/chameleon/chameleon.png"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <img src="./imgs/color-translator-logos-assets/chameleon/color-translator-chameleon-horizontal-white.png" alt="Color Translator Logo" class="logo">
+            <!-- New feedback button - Included in: oct 17 2022 -->
+            <div class="feedback-button">
+                <button>test</button>
+            </div>
+        </div>
+
+        <main>
+            <div class="left-side">
+                <div class="color">
+                    <input type="text" name="input-color" id="input-color" placeholder="Color or #000" autofocus>
+                    <!-- <input type="color" name="input-color-eye-dropper" id="input-color-eye-dropper"> -->
+                </div>
+                <button class="button-go">Go</button>
+            </div>
+    
+            <div class="right-side">
+                <div class="color-name">Color name</div>
+                <!-- <button class="button-copy" onclick="copyText()">Copy</button> -->
+            </div>
+        </main>
+
+        <div class="footer">
+                <img src="./imgs/color-translator-logos-assets/chameleon/chameleon.png" alt="Color Translator Logo" class="footer-logo">
+                <p class="footer-text">Copyright &#169 | <script>document.write(new Date().getFullYear());</script> </p>
+        </div>
+
+    </div>
+
+    <script>
+        let inputColor = document.querySelector("#input-color");
+        // let inputColorEyeDropper = document.querySelector("#input-color-eye-dropper");
+        let colorName = document.querySelector(".color-name");
+        const buttonGo = document.querySelector(".button-go");
+        const buttonCopy = document.querySelector(".button-copy");
+
+        function changeBgColor(color) {
+            // buttonCopy.style.display = "inline";
+            color = color.toUpperCase();
+            document.body.style.background = color;
+            switch (color) {
+                // BASIC COLORS
+
+                // RGB
+                // WHITE
+                case '#FFF':
+                case '#FFFFFF':
+                    colorName.innerHTML = 'White';
+                    break;
+                case 'WHITE':
+                    colorName.innerHTML = '#FFFFFF';
+                    break;
+
+                // BLACK
+                case '#000':
+                case '#000000':
+                    colorName.innerHTML = 'Black';
+                    break;
+                case 'BLACK':
+                    colorName.innerHTML = '#000000';
+                    break;
+
+                // RED
+                case '#F00':
+                case '#FF0000':
+                    colorName.innerHTML = 'Red';
+                    break;
+                case 'RED':
+                    colorName.innerHTML = '#FF0000';
+                    break;                    
+
+                // LIME GREEN
+                case '#0F0':
+                case '#00FF00':
+                    colorName.innerHTML = 'Lime';
+                    break;
+                case 'LIME':
+                    colorName.innerHTML = '#00FF00';
+                    break;
+
+                // BLUE
+                case '#00F':
+                case '#0000FF':
+                    colorName.innerHTML = 'Blue';
+                    break;
+                case 'BLUE':
+                    colorName.innerHTML = '#0000FF';
+                    break;
+
+
+                // Other basic colors
+                // SILVER
+                case '#C0C0C0':
+                    colorName.innerHTML = 'Silver';
+                    break;
+                case 'SILVER':
+                    colorName.innerHTML = '#C0C0C0';
+                    break;
+
+                // GRAY
+                case '#808080':
+                    colorName.innerHTML = 'Gray';
+                    break;
+                case 'GREY':
+                case 'GRAY':
+                    colorName.innerHTML = '#808080';
+                    break;
+
+                // MAROON
+                case '#800000':
+                    colorName.innerHTML = 'Maroon';
+                    break;
+                case 'MAROON':
+                    colorName.innerHTML = '#800000';
+                    break;
+
+                // PURPLE
+                case '#800080':
+                    colorName.innerHTML = 'Purple';
+                    break;
+                case 'PURPLE':
+                    colorName.innerHTML = '#800080';
+                    break;
+
+                // FUCHSIA
+                case '#F0F':
+                case '#FF00FF':
+                    colorName.innerHTML = 'Fuchsia';
+                    break;
+                case 'FUCHSIA':
+                    colorName.innerHTML = '#FF00FF';
+                    break;
+
+                // GREEN
+                case '#008000':
+                    colorName.innerHTML = 'Green';
+                    break;
+                case 'GREEN':
+                    colorName.innerHTML = '#008000';
+                    break;
+
+                // OLIVE
+                case '#808000':
+                    colorName.innerHTML = 'Olive';
+                    break;
+                case 'OLIVE':
+                    colorName.innerHTML = '#808000';
+                    break;
+
+                // YELLOW
+                case '#FF0':
+                case '#FFFF00':
+                    colorName.innerHTML = 'Yellow';
+                    break;
+                case 'YELLOW':
+                    colorName.innerHTML = '#FFFF00';
+                    break;
+
+                // NAVY
+                case '#000080':
+                    colorName.innerHTML = 'Navy';
+                    break;
+                case 'NAVY':
+                    colorName.innerHTML = '#000080';
+                    break;
+
+                // TEAL
+                case '#008080':
+                    colorName.innerHTML = 'Teal';
+                    break;
+                case 'TEAL':
+                    colorName.innerHTML = '#008080';
+                    break;
+
+                // AQUA
+                case '#0FF':
+                case '#00FFFF':
+                    colorName.innerHTML = 'Silver';
+                    break;
+                case 'AQUA':
+                    colorName.innerHTML = '#00FFFF';
+                    break;
+
+
+
+                // EXTENDED COLORS
+                // PINK
+                case '#FFC0CB':
+                    colorName.innerHTML = 'Pink';
+                    break;
+                case 'PINK':
+                    colorName.innerHTML = '#FFC0CB';
+                    break;
+
+
+                // EASTER EGGS - BANDS
+                case 'BLACK SABBATH':
+                    colorName.innerHTML = "<p  style='font-size: 25px; text-align: center'>Yes, Black Sabbath is really good!<br>" + '<a href="https://music.youtube.com/playlist?list=RDCLAK5uy_kdY6lTPLmpV5ZIs-QlTFnFKZTximN_MLk" target="_blank" style="color: #fff">Here are a few songs from them!</a>' + " Haha</p>", document.body.style.background = 'url("./imgs/bands/Black_Sabbath_(1970)-from-wikipedia.png")', document.body.style.backgroundSize = "cover", document.body.style.backgroundPosition = "center";
+                    break;
+                case 'WHITESNAKE':
+                    colorName.innerHTML = "<p  style='font-size: 25px; text-align: center'>Wondering if it's loving that you're feeling?<br>" + '<a href="https://music.youtube.com/watch?v=liC-8V85nhY&feature=share" target="_blank" style="color: #fff">Here\'s Whitesnake!</a>' + "</p>", document.body.style.background = 'url("./imgs/bands/whitesnake-website-igor-miranda.jpg")', document.body.style.backgroundSize = "cover", document.body.style.backgroundPosition = "center";
+                    break;
+                case 'RED HOT CHILI PEPPERS':
+                    colorName.innerHTML = "<p  style='font-size: 25px; text-align: center'>If you wanna dream of Californication, <br>" + '<a href="https://music.youtube.com/playlist?list=RDCLAK5uy_ldxUXhT6nZNMQn-iBjHaXrSoQFIQi6_Rk" target="_blank" style="color: #fff">here are a few songs from Red Hot Chili Peppers!</a>' + "</p>", document.body.style.background = 'url("./imgs/bands/red-hot-chili-peppers-jovem-pan.jpg")', document.body.style.backgroundSize = "cover", document.body.style.backgroundPosition = "center";
+                    break;
+                case 'GREEN DAY':
+                    colorName.innerHTML = "<p  style='font-size: 25px; text-align: center'>If you're awake, we're probably not in September... <br>" + '<a href="https://music.youtube.com/playlist?list=RDCLAK5uy_miGU2op14_OZry8sIvZIz12q6T1VumBjA&feature=share&playnext=1" target="_blank" style="color: #fff">Here are some Green Day songs!</a>' + "</p>", document.body.style.background = 'url("./imgs/bands/green-day-letras-mus-br.jpg")', document.body.style.backgroundSize = "cover", document.body.style.backgroundPosition = "center";
+                    break;
+
+                case 'PINK FLOYD':
+                    colorName.innerHTML = "<p  style='font-size: 25px; text-align: center'>Looking for the rainbow?<br>" + '<a href="https://music.youtube.com/playlist?list=RDCLAK5uy_nPN5nGhNWMuq-NC1COQ7_tMl2r5SxSgKE" target="_blank" style="color: #fff">Here are a few songs from Pink Floyd!</a>' + "</p>", document.body.style.background = 'url("./imgs/bands/pink-floyd-veja-sao-paulo.jpg")';
+                    break;
+
+                default: /*buttonCopy.style.display = "none",*/ colorName.innerHTML = "<p  style='font-size: 25px; text-align: center'>This color is not yet in our list.<br>Meanwhile, check " + '<a href="https://www.w3.org/wiki/CSS/Properties/color/keywords" target="_blank" style="color: #fff">the available colors</a>' + "!</p>";
+                break;
+            };
+
+        };
+
+        // buttonCopy.addEventListener('click', (colorNameAfterSwitch) => {
+        //     colorNameAfterSwitch = colorName.innerHTML;
+
+        //     var tempInput = document.createElement("input");
+        //     tempInput.value = value;
+        //     document.body.appendChild(tempInput);
+        //     tempInput.select();
+        //     document.execCommand("copy");
+        //     document.body.removeChild(tempInput);
+
+        //     // navigator.clipboard.writeText(colorNameAfterSwitch);
+        //     // alert("Copied the text: " + colorNameAfterSwitch);
+        // });
+
+        function copyText(colorNameAfterSwitch) {
+            // colorNameAfterSwitch = colorName.innerHTML;
+            // document.querySelector(colorName.innerHTML).select();
+            // For mobile devices
+            // colorName.innerHTML.setSelectionRange(0, 99999);
+
+            // console.log(colorNameAfterSwitch);
+
+            // navigator.clipboard.writeText(colorName.innerHTML.value);
+            // alert("Copied the text: " + colorName.innerHTML.value);
+        };
+
+        buttonGo.addEventListener('click', e => {
+            changeBgColor(inputColor.value);
+        });
+        inputColor.addEventListener('keyup', e => {
+            if(e.key === "Enter") {
+                changeBgColor(inputColor.value);
+            }
+        });
+
+    </script>
+
+</body>
+</html>
